@@ -212,7 +212,7 @@ const RootComponent = {
     onMounted(()=>{updateMD()});
 
     const pages = {
-    
+        'index': {name: "index", title: "首页", href: "./index.html", md: "md/index.md"}
     };
 
     const pageNames = Object.keys(pages);
