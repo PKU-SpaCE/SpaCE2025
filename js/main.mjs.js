@@ -213,8 +213,8 @@ const RootComponent = {
 
     const pages = {
       'index': {name: "index", title: "首页", href: "./index.html", md: "md/index.md"},
-      'news': {name: "news", title: "最新消息", href: "./news.html", md: "md/news.md"},
-      'leaderboard': {name: "leaderboard", title: "排行榜", href: "./leaderboard.html", md: "md/leaderboard.md"},
+    //  'news': {name: "news", title: "最新消息", href: "./news.html", md: "md/news.md"},
+    //  'leaderboard': {name: "leaderboard", title: "排行榜", href: "./leaderboard.html", md: "md/leaderboard.md"},
     };
 
     const pageNames = Object.keys(pages);
@@ -330,7 +330,6 @@ const RootComponent = {
         <p class="small"><a class="text-decoration-none text-light" href="https://klcl.pku.edu.cn/" target="_blank">北京大学计算语言学教育部重点实验室</a></p>
         <div class="mt-4 hstack gap-5 justify-content-center">
           <div><a class="text-decoration-none text-light" href="https://www.pku.edu.cn" target="_blank"><img src="./images/pku-logo.png" height="30"></a></div>
-          <div><a class="text-decoration-none text-light" href="http://cips-cl.org/static/CCL2024/index.html" target="_blank"><img src="./images/ccl2024.png" height="30"> CCL2025</a></div>
           <div><a class="text-decoration-none text-light" href="http://cips-cl.org/static/CCL2025/index.html" target="_blank"><img src="./images/ccl2025.png" height="30"> CCL2025</a></div>
         </div>
       </footer>
