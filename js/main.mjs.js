@@ -295,8 +295,8 @@ const RootComponent = {
           <div class="row text-center">
             <div class="col">
               <div class="rounded overflow-hidden py-4" style="border: 1px var(--pku-red) solid; color: var(--pku-red); --background:#4188bb;">
-                <div class="h1 fw-bold m-0 p-0">SpaCE2024</div>
-                <div>第四届中文空间语义理解评测</div>
+                <div class="h1 fw-bold m-0 p-0">SpaCE2025</div>
+                <div>第五届中文空间语义理解评测</div>
               </div>
             </div>
           </div>
@@ -323,7 +323,7 @@ const RootComponent = {
       </div>
 
       <footer class=" text-center --rounded overflow-hidden py-5 text-light" style="border: 1px var(--pku-red) solid; background:var(--pku-red);">
-        <p class="small fw-bold"><a class="text-decoration-none text-light" href="https://2030nlp.github.io/SpaCE2024">第四届中文空间语义理解评测  SpaCE2024</a></p>
+        <p class="small fw-bold"><a class="text-decoration-none text-light" href="https://2030nlp.github.io/SpaCE2025">第五届中文空间语义理解评测  SpaCE2025</a></p>
         <!--<p class="small">主办单位： <a class="text-decoration-none text-light" href="https://www.pku.edu.cn" target="_blank">北京大学</a></p>-->
         <p class="small"><a class="text-decoration-none text-light" href="https://chinese.pku.edu.cn/" target="_blank">北京大学中文系</a></p>
         <p class="small"><a class="text-decoration-none text-light" href="http://ccl.pku.edu.cn/" target="_blank">北京大学中国语言学研究中心</a></p>
@@ -331,7 +331,7 @@ const RootComponent = {
         <p class="small"><a class="text-decoration-none text-light" href="https://klcl.pku.edu.cn/" target="_blank">北京大学计算语言学教育部重点实验室</a></p>
         <div class="mt-4 hstack gap-5 justify-content-center">
           <div><a class="text-decoration-none text-light" href="https://www.pku.edu.cn" target="_blank"><img src="./images/pku-logo.png" height="30"></a></div>
-          <div><a class="text-decoration-none text-light" href="http://cips-cl.org/static/CCL2024/index.html" target="_blank"><img src="./images/ccl2024.png" height="30"> CCL2024</a></div>
+          <div><a class="text-decoration-none text-light" href="http://cips-cl.org/static/CCL2024/index.html" target="_blank"><img src="./images/ccl2024.png" height="30"> CCL2025</a></div>
         </div>
       </footer>
 
