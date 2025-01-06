@@ -17,7 +17,6 @@
 > - <a href="#time">评测赛程</a>
 > - <a href="#award">奖项设置</a>
 > - <a href="#otherinfo">其他信息</a>
-> - <a href="#committee">评测委员会</a>
 
 ### <center>1.  <span id="content">任务内容</span></center>
 
