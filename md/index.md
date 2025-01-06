@@ -1,4 +1,4 @@
-# <center>第四届中文空间语义理解评测任务（SpaCE2024）</center>
+# <center>第五届中文空间语义理解评测任务（SpaCE2025）</center>
 
 **[<center>👉 <font style=color:rgb(226,76,71)>点我立即报名</font> 👈</center>](https://docs.qq.com/form/page/DSVJvYnVRV0tCemdJ)**
 
