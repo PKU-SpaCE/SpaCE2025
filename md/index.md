@@ -1,10 +1,10 @@
 # <center>第五届空间语义理解评测（SpaCE2025）</center>
 
+**[<center>👉 <font style=color:rgb(226,76,71)>点我立即报名</font> 👈</center>](https://docs.qq.com/form/page/DSWpBdE9FUWFOUkZa)**
 
-- 任务组织者/主席：詹卫东、穗志方
-- 任务负责人/联系人：肖力铭
+- 组织者/主席：詹卫东、穗志方
 - 工作人员：肖力铭，胡楠，秦宇航，邓思锐，崔香，蔡奇栩，姜秀旻，丁锦坤，张子涵，王希豪，孙春晖，邢丹，杨奕欣，马敬原，李政，王悦
-- 单位：北京大学 
+- 主办单位：北京大学 
 - 联系方式：[lmxiao@stu.pku.edu.cn]()
 
 
@@ -294,8 +294,11 @@ Acc = 命中正确答案的题数 / 题目总数
 
 由中国中文信息学会为本次评测获奖队伍提供荣誉证书。
 
-### <center>6.  <span id="otherinfo">其他信息</span></center>
-本次评测的官方网址、报名方式等信息将在评测发布时一同公布。
+### <center>6.  <span id="otherinfo">报名方式</span></center>
+
+请仔细阅读《[第五届空间语义理解评测 SpaCE2025 参赛协议](https://github.com/PKU-SpaCE/SpaCE2025/tree/main/agreements/Agreement.md)》和《[第五届空间语义理解评测 SpaCE2025 数据集使用许可](https://github.com/PKU-SpaCE/SpaCE2025/tree/main/agreements/LICENSE.md)》，然后点击进入 [报名链接](https://docs.qq.com/form/page/DSWpBdE9FUWFOUkZa) 或者扫描下方二维码进行报名。
+
+<div align="center"><img src="../images/SpaCE2025_QRCode.png" width = "300"/></div>
 
 
 
