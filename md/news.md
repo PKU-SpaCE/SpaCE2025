@@ -3,12 +3,12 @@
 
 ## 📮 最新消息
 
-<p class="text-center">本页面用于发布关于 <strong>第五届中文空间语义理解评测<small>（SpaCE2025）</small></strong> 的最新消息，<br/><span style="color:var(--notice-red)"><strong>请各位参赛者保持关注本页面，了解评测最新动态和要求</strong></span>，谢谢!</p>
+<p class="text-center">本页面用于发布关于 <strong>第五届空间语义理解评测<small>（SpaCE2025）</small></strong> 的最新消息，<br/><span style="color:var(--notice-red)"><strong>请各位参赛者保持关注本页面，了解评测最新动态和要求</strong></span>，谢谢!</p>
 
 <br/>
 
 
-- `1月日` 第五届中文空间语义理解评测（SpaCE2025）网页 <a href="https://2030nlp.github.io/SpaCE2025" target="_blank">🔗</a> 和数据仓库 <a href="https://github.com/2030NLP/SpaCE2025" target="_blank">🔗</a> 上线。
+- `1月9日` 第五届空间语义理解评测（SpaCE2025）网页 <a href="https://pku-space.github.io/SpaCE2025" target="_blank">🔗</a> 和数据仓库 <a href="https://github.com/PKU-SpaCE/SpaCE2025" target="_blank">🔗</a> 上线。
 
 <br/>
 
@@ -22,4 +22,4 @@
     <!-- - [中文语法纠错评测 CLTC 2022](https://github.com/blcuicall/CCL2022-CGEC) -->
 
 <hr/>
-<p class="text-center">最后更新于<strong>2025年1月6日</strong></p>
+<p class="text-center">最后更新于<strong>2025年1月9日</strong></p>
