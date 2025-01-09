@@ -213,8 +213,8 @@ const RootComponent = {
 
     const pages = {
       'index': {name: "index", title: "首页", href: "./index.html", md: "md/index.md"},
-    //  'news': {name: "news", title: "最新消息", href: "./news.html", md: "md/news.md"},
-    //  'leaderboard': {name: "leaderboard", title: "排行榜", href: "./leaderboard.html", md: "md/leaderboard.md"},
+      'news': {name: "news", title: "最新消息", href: "./news.html", md: "md/news.md"},
+      'leaderboard': {name: "leaderboard", title: "排行榜", href: "./leaderboard.html", md: "md/leaderboard.md"},
     };
 
     const pageNames = Object.keys(pages);
@@ -296,7 +296,7 @@ const RootComponent = {
             <div class="col">
               <div class="rounded overflow-hidden py-4" style="border: 1px var(--pku-red) solid; color: var(--pku-red); --background:#4188bb;">
                 <div class="h1 fw-bold m-0 p-0">SpaCE2025</div>
-                <div>第五届中文空间语义理解评测</div>
+                <div>第五届空间语义理解评测</div>
               </div>
             </div>
           </div>
@@ -322,7 +322,7 @@ const RootComponent = {
         </main>
       </div>
       <footer class=" text-center --rounded overflow-hidden py-5 text-light" style="border: 1px var(--pku-red) solid; background:var(--pku-red);">
-        <p class="small fw-bold"><a class="text-decoration-none text-light" href="https://2030nlp.github.io/SpaCE2025">第五届中文空间语义理解评测  SpaCE2025</a></p>
+        <p class="small fw-bold"><a class="text-decoration-none text-light" href="https://2030nlp.github.io/SpaCE2025">第五届空间语义理解评测  SpaCE2025</a></p>
         <!--<p class="small">主办单位： <a class="text-decoration-none text-light" href="https://www.pku.edu.cn" target="_blank">北京大学</a></p>-->
         <p class="small"><a class="text-decoration-none text-light" href="https://chinese.pku.edu.cn/" target="_blank">北京大学中文系</a></p>
         <p class="small"><a class="text-decoration-none text-light" href="http://ccl.pku.edu.cn/" target="_blank">北京大学中国语言学研究中心</a></p>
