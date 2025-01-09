@@ -296,9 +296,7 @@ Acc = 命中正确答案的题数 / 题目总数
 
 ### <center>6.  <span id="otherinfo">报名方式</span></center>
 
-请仔细阅读《[第五届空间语义理解评测 SpaCE2025 参赛协议](https://github.com/PKU-SpaCE/SpaCE2025/tree/main/agreements/Agreement.md)》和《[第五届空间语义理解评测 SpaCE2025 数据集使用许可](https://github.com/PKU-SpaCE/SpaCE2025/tree/main/agreements/LICENSE.md)》，然后点击进入 [报名链接](https://docs.qq.com/form/page/DSWpBdE9FUWFOUkZa) 或者扫描下方二维码进行报名。
-
-<div align="center"><img src="../images/SpaCE2025_QRcode.png" width = "300"/></div>
+请仔细阅读《[第五届空间语义理解评测 SpaCE2025 参赛协议](https://github.com/PKU-SpaCE/SpaCE2025/tree/main/agreements/Agreement.md)》和《[第五届空间语义理解评测 SpaCE2025 数据集使用许可](https://github.com/PKU-SpaCE/SpaCE2025/tree/main/agreements/LICENSE.md)》，然后点击进入 [报名链接](https://docs.qq.com/form/page/DSWpBdE9FUWFOUkZa)
 
 
 
