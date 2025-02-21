@@ -24,15 +24,21 @@
 
 空间表达描述了物体之间的空间方位关系，是自然语言中的高频现象。实现空间语义理解不仅依赖语言知识，还需要调用空间认知能力，准确构建文本表征的空间场景。空间语义理解评测（Spatial Cognition Evaluation，简称 SpaCE）以测试机器的空间语义理解水平为目标，自2021年开始连续举办了四届赛事1，发布了一系列评测任务，包括（1）空间信息正误判断；（2）空间信息异常识别；（3）空间参照实体识别；（4）空间语义角色识别；（5）空间异形同义判别；（6）空间方位关系推理，等等。大语言模型在SpaCE2024的评测结果显示，大语言模型的空间语义理解水平与普通人类的平均水平相比，在对空间认知加工要求较高的任务上，存在较大差距。空间语义理解对大语言模型来说仍然是一项挑战性任务。 
 
-第五届空间语义理解评测（SpaCE2025）继续开展针对大语言模型的空间语义理解能力测试，关注大语言模型在以下任务上的表现： 
+第五届空间语义理解评测（SpaCE2025）继续开展针对大语言模型的空间语义理解能力测试，关注大语言模型的空间语言能力和空间推理能力。
+
+- **空间语言能力类评测任务**，包括三个子任务：
 
 （1）空间信息正误判断。空间信息正确的文本可以构造出合乎常理的空间场景，而错误的文本不能，本任务要求机器判断文本的空间信息是否正确。 
 
-（2）空间参照实体识别。确定实体方位依赖参照物，但文本中存在方位词前省略参照物的现象，本任务要求机器在这类文本中找出提供方位参照的实体。 
+（2）空间参照实体判断。确定实体方位依赖参照物，但文本中存在方位词前省略参照物的现象，本任务要求机器在这类文本中判断哪个实体提供了方位参照。 
 
-（3）空间异形同义判别。两个有方位词语差异的空间表达存在描述相同空间场景的可能，有异形同义和异形异义两种情况，本任务要求机器找出符合对应情况的词语对。 
+（3）空间异形同义判断。两个有方位词语差异的空间表达存在描述相同空间场景的可能，有异形同义和异形异义两种情况，本任务要求机器判断两个文本是否异形同义。
 
-（4）空间方位关系推理。给定一个空间场景和若干已知的实体间方位关系，本任务要求机器推理出实体在空间场景中的位置，以及未知的方位关系。 
+- **空间推理能力类评测任务**，包括两个子任务：
+
+（1）中文空间方位关系推理。给定一个空间场景和若干已知的实体间方位关系，本任务要求机器在中文文本中推理出实体在空间场景中的位置，以及未知的方位关系。 
+
+（2）英文空间方位关系推理。与中文推理文本对照的英文文本，要求机器在英文文本中推理出实体在空间场景中的位置，以及未知的方位关系。 
 
 
 #### 1.2  与SpaCE2024的比较
@@ -73,8 +79,6 @@
 （3）option：题目选项。字典，键-值对为“选项字母-选项内容”。最少有两个键-值对，最多有四个键-值对。选项字母为A、B、C、D。 
     
 （4）answer：题目答案。数组，元素是选项字母。例如，["A"]表示机器选择option的A选项作为答案。测试集没有answer字段。 
-    
-（5）inference：空间方位关系推理题的参考推理过程。字符串。仅空间方位关系推理任务的微调集有inference字段。 
 
 
 #### 2.2  <span id="example">数据样例</span>
@@ -96,7 +100,7 @@
 
 - 样例的文本存在异常的空间信息：“孟某从右侧超越谈某的过程中，孟某的电动自行车右侧与谈某的电动自行车左侧生碰擦”。根据空间方位常识可知，孟某如果从右侧超越谈某，只能是孟某的左侧与谈某的右侧发生碰擦，不可能孟某的右侧与谈某的左侧发生碰擦。所以文本的空间信息是错误的。
   
-##### 2.2.2  <span id="task2">空间参照实体识别</span>
+##### 2.2.2  <span id="task2">空间参照实体判断</span>
 
 
 ```json
@@ -112,7 +116,7 @@
 
 - 样例中，“谈某……在前方同向行驶”指的是谈某在孟某之前，而相应地，孟某则是在谈某的后方骑行。
 
-##### 2.2.3  <span id="task3">空间异形同义判别</span>
+##### 2.2.3  <span id="task3">空间异形同义判断</span>
 
 
 ```json
@@ -132,9 +136,8 @@
 
 - 样例中，把“下”替换为“旁”和“边”，形成的新句与原句都能描述蒋一轮在地面上且身体与树干接触的空间场景。
 
-##### 2.2.4  <span id="task4">空间方位关系推理</span>
+##### 2.2.4  <span id="task4">中文空间方位关系推理</span>
 
-【中文样例】
 
 ```json
 {
@@ -149,27 +152,17 @@
              B:郝大通, 
              C:孙不二, 
              D:赵志敬} 
-    answer：[A, C] 
-    inference： 
-    因为王处一在谭处端右侧紧邻位置，所以谭处端的右边起第一个就是王处一。 
-    因为谭处端的右边起第一个就是王处一，所以王处一在谭处端顺时针方向第一个位置。 
-    因为从郝大通的左边数起第五个位置是谭处端，所以郝大通的右边起第一个就是谭处端。 
-    因为郝大通的右边起第一个就是谭处端，所以谭处端在郝大通顺时针方向第一个位置。 
-    因为郝大通在孙不二逆时针方向第三个位置，所以孙不二在郝大通顺时针方向第三个位置。 
-    因为孙不二在郝大通顺时针方向第三个位置，所以孙不二在谭处端顺时针方向第二个位置。 
-    因为孙不二在谭处端顺时针方向第二个位置，所以孙不二在王处一顺时针方向第一个位置。 
-    因为赵志敬在孙不二右边数起第一个位置，所以赵志敬在孙不二顺时针方向第一个位置。 
-    因为刘处玄与王处一正背对，所以刘处玄在王处一顺时针方向第三个位置。 
-    因为刘处玄在王处一顺时针方向第三个位置，所以刘处玄在孙不二顺时针方向第二个位置。 
-    因为刘处玄在孙不二顺时针方向第二个位置，所以刘处玄在赵志敬顺时针方向第一个位置。 
-    因为王处一在谭处端顺时针方向第一个位置，所以刘处玄在谭处端顺时针方向第四个位置。 
-    因为谭处端在郝大通顺时针方向第一个位置，所以刘处玄在郝大通顺时针方向第五个位置。 
-    因为刘处玄在郝大通顺时针方向第五个位置，所以刘处玄在郝大通逆时针方向第一个位置。 
-    因此，刘处玄与王处一之间隔着其他实体，刘处玄与谭处端之间隔着其他实体，刘处玄与孙不二之间隔着其他实体。
+    answer：[A, C]
 }
 ```
 
-【英文样例】
+说明：
+
+- 文本描绘了一个正六边形的围坐场景，六个实体以背对中心的状态位于正六边形的顶点。根据文本给出的已知条件，可以推理出每个实体的位置，可知：刘处玄与郝大通和赵志敬相邻。因此，刘处玄与其他三个实体之间隔着实体。
+
+
+##### 2.2.5  <span id="task5">英文空间方位关系推理</span>
+
 
 ```json
 {
@@ -184,49 +177,36 @@
              B:Jennifer, 
              C:William, 
              D:Michael} 
-    answer：[A, C] 
-    inference： 
-    Because Robert is directly to the right of Mary, Robert is the first to the right of Mary. 
-    Because Robert is the first to the right of Mary, Robert is in the first position clockwise from Mary. 
-    Because Mary occupies the fifth position to the left of Jennifer, Mary is the first to the right of Jennifer. 
-    Because Mary is the first to the right of Jennifer, Mary is in the first position clockwise from Jennifer. 
-    Because Jennifer is in the third position counterclockwise from William, William is in the third position clockwise from Jennifer. 
-    Because William is in the third position clockwise from Jennifer, William is in the second position clockwise from Mary. 
-    Because William is in the second position clockwise from Mary, William is in the first position clockwise from Robert. 
-    Because Michael occupies the first position to the right of William, Michael is in the first position clockwise from William. 
-    Because John and Robert are back-to-back, John is in the third position clockwise from Robert. 
-    Because John is in the third position clockwise from Robert, John is in the second position clockwise from William. 
-    Because John is in the second position clockwise from William, John is in the first position clockwise from Michael. 
-    Because Robert is in the first position clockwise from Mary, John is in the fourth position clockwise from Mary. 
-    Because Mary is in the first position clockwise from Jennifer, John is in the fifth position clockwise from Jennifer. 
-    Because John is in the fifth position clockwise from Jennifer, John is in the first position counterclockwise from Jennifer. 
-    Therefore, there are other entities between John and Robert, between John and Mary, and between John and William.
+    answer：[A, C]
 }
 ```
 
 说明：
 
-- 中文样例和英文样例是对应关系，除了实体的名称不同，空间场景以及已知条件均相同。文本描绘了一个正六边形的围坐场景，六个实体以背对中心的状态位于正六边形的顶点。根据文本给出的已知条件，可以推理出每个实体的位置，可知刘处玄与郝大通和赵志敬相邻、John 与 Jennifer 和 Michael 相邻。由此可知，刘处玄、John 与其他三个实体之间隔着实体。
+- 英文例题和中文例题是对应关系，除了实体的名称不同，空间场景以及已知条件均相同。根据文本给出的已知条件，可以推理出每个实体的位置，可知：John 与 Jennifer 和 Michael 相邻。因此，John 与其他三个实体之间隔着实体。
 
 #### 2.3  <span id="distribution">数据概况</span>
 
-总题量约13,000 题。空间信息正误判断、空间参照实体识别、空间异形同义判别任务划分示例集和测试集，示例集各提供约50条代表性数据，测试集各约800题。空间方位关系推理划分微调集、验证集和测试集，微调集提供约3,000条带推理过程的数据，验证集约1000 题，测试集约6000题。 
+总题量约 13,000 题。空间信息正误判断、空间参照实体判断、空间异形同义判断任务划分示例集和测试集，示例集各提供约 20 条高质量代表性数据，测试集各约 800 题。空间方位关系推理划分训练集、验证集和测试集，训练集提供约 3,000 条数据，验证集约 1000 题，测试集约 6000 题。 
 
-空间信息正误判断、空间参照实体识别、空间异形同义判别任务在多种不同类型的真实语料上进行改写工作，包括：报刊语料、文学作品语料、中小学课本语料、交通事故描述文本、人体动作文本、地理百科文本。空间方位关系推理任务则是运用基于知识库的数据合成方法生成的高质量合成数据。 
+空间信息正误判断、空间参照实体判断、空间异形同义判断任务在多种不同类型的真实语料上进行改写工作，包括：报刊语料、文学作品语料、中小学课本语料、交通事故描述文本、人体动作文本、地理百科文本。空间方位关系推理任务则是运用基于知识库的数据合成方法生成的高质量合成数据。 
 
-测试集中设置约3%的干扰题，不计入比赛成绩，仅用于衡量大语言模型的稳定性。干扰题是在比赛题上进行复制或形式扰动形成的题目，扰动前后答案不变，包括直接复制题目、改变选项顺序、改变问题括号的位置等操作。“稳定”的意思是大语言模型在比赛题及其对应的干扰题上都给出了一致的答案。     
+测试集中设置约 3% 的干扰题，不计入比赛成绩，仅用于衡量大语言模型的稳定性。干扰题是在比赛题上进行复制或形式扰动形成的题目，扰动前后答案不变，包括直接复制题目、改变选项顺序、改变问题括号的位置等操作。“稳定”的意思是大语言模型在比赛题及其对应的干扰题上都给出了一致的答案。     
 
 ### <center>3.  <span id="eval">评价标准</span></center>
-SpaCE2025 使用准确率（Accuracy，Acc）作为评价指标和排名依据，公式如下：
-```python
-Acc = 命中正确答案的题数 / 题目总数
+参赛队伍的排名依据为两大类任务的综合得分 S ，S1 代表空间语言能力类评测任务的得分，S2 代表空间推理能力类评测任务的得分，Acc~i 代表各子任务的准确率（Accuracy，Acc）。公式如下：
+
+```math
+S = 0.5⋅S1 + 0.5⋅S2
+S1 =  \frac{1}{3}  \sum\limits_{i=1}^3Acc_i
+S2 =  \frac{1}{2}  \sum\limits_{i=1}^2Acc_i
+Acc_i = \frac{\#correct}{\#total}
 ```
 
 稳定性用于衡量机器表现的稳定程度，不作为排名依据。以比赛题及其对应的干扰题为一组，公式如下：
 ```python
 稳定性 = 组内答案完全一致的组数 / 总组数
 ```
-
 
 
 ### <center>4.  <span id="time">评测赛程</span></center>
@@ -240,23 +220,23 @@ Acc = 命中正确答案的题数 / 题目总数
 </thead>
 <tbody>
 <tr>
-<td>2月20日~4月15日</td>
+<td>2月20日~3月31日</td>
 <td>开放报名</td>
 </tr>
 <tr>
-<td>3月1日</td>
-<td>发布训练集</td>
+<td>3月24日</td>
+<td>发布示例集和训练集</td>
 </tr>
 <tr>
-<td>4月15日</td>
+<td>3月31日</td>
 <td>发布验证集和测试集，开放结果提交</td>
 </tr>
 <tr>
-<td>5月15日</td>
+<td>5月11日</td>
 <td>测试结果提交截止</td>
 </tr>
 <tr>
-<td>5月21日</td>
+<td>5月15日</td>
 <td>参赛模型提交截止</td>
 </tr>
 <tr>
@@ -286,11 +266,11 @@ Acc = 命中正确答案的题数 / 题目总数
 
 评测奖金由华为公司赞助。本次评测将评选出如下奖项：
 
-一等奖拟定 0-1名 ，奖金待定。
+一等奖拟定 0-1名 ，奖金池共 12,000。
 
-二等奖拟定 0-2名 ，奖金待定。
+二等奖拟定 0-2名 ，奖金池共 12,000。
 
-三等奖拟定 0-4名 ，奖金待定。
+三等奖拟定 0-4名 ，奖金池共 12,000。
 
 由中国中文信息学会为本次评测获奖队伍提供荣誉证书。
 
@@ -298,5 +278,30 @@ Acc = 命中正确答案的题数 / 题目总数
 
 请仔细阅读《[第五届空间语义理解评测 SpaCE2025 参赛协议](https://github.com/PKU-SpaCE/SpaCE2025/tree/main/agreements/Agreement.md)》和《[第五届空间语义理解评测 SpaCE2025 数据集使用许可](https://github.com/PKU-SpaCE/SpaCE2025/tree/main/agreements/LICENSE.md)》，然后点击进入 [报名链接](https://docs.qq.com/form/page/DSWpBdE9FUWFOUkZa)
 
+### <center>7.  <span id="rules">赛事规则</span></center>
 
+一、参赛模型要求：
 
+（1）空间语言能力类评测任务（3个子任务）：可通过设计提示词或微调的方式基于**参数量不大于7B的大语言模型**参赛。
+
+（2）空间推理能力类评测任务（2个子任务）：**必须通过微调[DeepSeek-R1-Distill-Qwen-7B](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B)的方式参赛**。
+
+二、以下行为将**取消获奖资格**：
+
+（1）在模型训练、微调阶段使用验证集或测试集的数据。例如，用测试集生成伪标签数据进行数据增强；
+
+（2）将验证集或测试集的数据作为提示词示例使用；
+
+（3）测试集提交结果为人工作答结果；
+
+（4）使用SpaCE2025以外的其他数据集；
+
+（5）参赛模型不符合要求；
+
+（6）最终成绩无法复现。
+
+三、参赛队伍每日最多可提交3次测试集结果，最终成绩取所有提交结果中的最高得分。主办方将实时返回每次提交的得分，并每日更新一次排行榜。提交通道关闭后再提交的结果不计入排名。
+
+四、参赛队伍须向主办方提交可复现的模型、代码和提示词。鉴于大语言模型输出的不稳定性，复现结果允许在2%以内浮动。
+
+五、最终解释权归主办方所有。
