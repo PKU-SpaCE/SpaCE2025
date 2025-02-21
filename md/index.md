@@ -201,8 +201,9 @@ $S = 0.5⋅S1 + 0.5⋅S2$
 $S1 =  \frac{1}{3}  \sum\limits_{i=1}^3Acc_i$
 
 $S2 =  \frac{1}{2}  \sum\limits_{i=1}^2Acc_i$
-
-$Acc_i = \frac{\#correct}{\#total}$
+```
+Acc_i = \frac{\#correct}{\#total}
+```
 
 稳定性用于衡量机器表现的稳定程度，不作为排名依据。以比赛题及其对应的干扰题为一组，公式如下：
 ```python
