@@ -304,10 +304,10 @@ const RootComponent = {
             <div class="col">
               <ul class="nav nav-pills --nav-tabs justify-content-center">
                 <li class="nav-item" v-for="page in pages">
-             <!--   <a class="nav-link" :class="{active: pageName()==page.name}" :href="page.href">{{page.title}}</a>  -->
+                  <a class="nav-link" :class="{active: pageName()==page.name}" :href="page.href">{{page.title}}</a>  
                 </li>
                 <li class="nav-item">
-                  <!--<a class="nav-link" href="./register.html">立即报名</a>-->
+                  <a class="nav-link" href="./register.html">立即报名</a>
                 </li>
               </ul>
             </div>
