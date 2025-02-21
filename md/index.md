@@ -1,15 +1,3 @@
-<head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-
 # <center>第五届空间语义理解评测任务（SpaCE2025）</center>
 
 **[<center>👉 <font style=color:rgb(226,76,71)>点我立即报名</font> 👈</center>](https://docs.qq.com/form/page/DSWpBdE9FUWFOUkZa)**
