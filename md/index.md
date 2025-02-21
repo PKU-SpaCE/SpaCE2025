@@ -196,7 +196,7 @@
 ### <center>3.  <span id="eval">评价标准</span></center>
 参赛队伍的排名依据为两大类任务的综合得分 S ，S1 代表空间语言能力类评测任务的得分，S2 代表空间推理能力类评测任务的得分，Acc~i 代表各子任务的准确率（Accuracy，Acc）。公式如下：
 
-![](https://github.com/Dylandjk/SpaCE2025/blob/main/images/score.png)
+![](images/score.png)
 
 稳定性用于衡量机器表现的稳定程度，不作为排名依据。以比赛题及其对应的干扰题为一组，公式如下：
 ```python
