@@ -198,8 +198,14 @@
 
 ```math
 S = 0.5⋅S1 + 0.5⋅S2
+```
+```math
 S1 =  \frac{1}{3}  \sum\limits_{i=1}^3Acc_i
+```
+```math
 S2 =  \frac{1}{2}  \sum\limits_{i=1}^2Acc_i
+```
+```math
 Acc_i = \frac{\#correct}{\#total}
 ```
 
