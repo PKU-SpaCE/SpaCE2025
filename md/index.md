@@ -196,18 +196,13 @@
 ### <center>3.  <span id="eval">评价标准</span></center>
 参赛队伍的排名依据为两大类任务的综合得分 S ，S1 代表空间语言能力类评测任务的得分，S2 代表空间推理能力类评测任务的得分，Acc~i 代表各子任务的准确率（Accuracy，Acc）。公式如下：
 
-```math
-S = 0.5⋅S1 + 0.5⋅S2
-```
-```math
-S1 =  \frac{1}{3}  \sum\limits_{i=1}^3Acc_i
-```
-```math
-S2 =  \frac{1}{2}  \sum\limits_{i=1}^2Acc_i
-```
-```math
-Acc_i = \frac{\#correct}{\#total}
-```
+$\S = 0.5⋅S1 + 0.5⋅S2$
+
+$\S1 =  \frac{1}{3}  \sum\limits_{i=1}^3Acc_i$
+
+$\S2 =  \frac{1}{2}  \sum\limits_{i=1}^2Acc_i$
+
+$\Acc_i = \frac{\#correct}{\#total}$
 
 稳定性用于衡量机器表现的稳定程度，不作为排名依据。以比赛题及其对应的干扰题为一组，公式如下：
 ```python
