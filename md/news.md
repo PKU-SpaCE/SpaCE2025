@@ -7,7 +7,7 @@
 
 <br/>
 
-- `3月26日` 示例集发布 <a href="https://github.com/PKU-SpaCE/SpaCE2025/data" target="_blank">🔗
+- `3月26日` 示例集发布 <a href="https://github.com/PKU-SpaCE/SpaCE2025/tree/main/data" target="_blank">🔗
 
 - `1月9日` 第五届空间语义理解评测（SpaCE2025）网页 <a href="https://pku-space.github.io/SpaCE2025" target="_blank">🔗</a> 和数据仓库 <a href="https://github.com/PKU-SpaCE/SpaCE2025" target="_blank">🔗</a> 上线。
 
