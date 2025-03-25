@@ -7,6 +7,7 @@
 
 <br/>
 
+- `3月26日` 示例集发布 <a href="https://github.com/PKU-SpaCE/SpaCE2025/data" target="_blank">🔗
 
 - `1月9日` 第五届空间语义理解评测（SpaCE2025）网页 <a href="https://pku-space.github.io/SpaCE2025" target="_blank">🔗</a> 和数据仓库 <a href="https://github.com/PKU-SpaCE/SpaCE2025" target="_blank">🔗</a> 上线。
 
@@ -22,4 +23,4 @@
     <!-- - [中文语法纠错评测 CLTC 2022](https://github.com/blcuicall/CCL2022-CGEC) -->
 
 <hr/>
-<p class="text-center">最后更新于<strong>2025年1月9日</strong></p>
+<p class="text-center">最后更新于<strong>2025年3月26日</strong></p>
