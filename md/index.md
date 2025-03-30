@@ -219,7 +219,7 @@ answer：推理问题的答案。数组，元素是选项字母。例如，["A"]
     (4)Michael occupies the first position to the right of William;
     (5)Mary occupies the fifth position to the left of Jennifer. 
     question：There are other people between John and (). 
-    option：{A:Robert, 
+    options：{A:Robert, 
              B:Jennifer, 
              C:William, 
              D:Michael} 
