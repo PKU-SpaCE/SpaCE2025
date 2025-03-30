@@ -72,7 +72,7 @@ def main(params):
                 y = predictions[qid]
                 y_predict = y['answer'].strip()
                 if y_predict not in ['正确', '错误', '相同', '不同']:
-                    print(f"{qid}出现非题目要求的字符串!")
+                    print(f"{qid}的答案出现非题目要求的字符串，请对结果做预处理！")
 
         else:
             name[0] += f"-{name[1]}"
@@ -87,7 +87,7 @@ def main(params):
                 for p in y['answer']:
                     p = p.strip()
                     if p not in ['A', 'B', 'C', 'D']:
-                        print(f"{qid}出现非ABCD的字母!")
+                        print(f"{qid}的答案出现非ABCD的字母，请对结果做预处理！")
                     y_predict.add(p)
         if x_gold == y_predict:
             task_category[name[0]][0] += 1
