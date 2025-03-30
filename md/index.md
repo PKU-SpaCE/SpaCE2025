@@ -154,13 +154,13 @@ answer：对text1和text2描述的空间场景是否相同的判断结果。取�
 
 id：题目编号。每道题目都有唯一的编号，形如“spr-zh-数据集-数字”。spr为任务英文spatial position reasoning的缩写，train, dev, test分别代表训练集, 验证集和测试集。
 
-instruction：说明考题目标的引导语。仅供参考，参赛队伍可自行设计提示词。
+instruction：说明考题目标的引导语。通过引导语可区分单选题（一个正确答案）和多选题（两个或两个以上正确答案）。仅供参考，参赛队伍可自行设计提示词。
 
 text：包含情景描述和已知条件的文本材料。
 
 question：机器需要回答的推理问题。形式上是一个句中有括号的陈述句。 
     
-option：题目选项。字典，键-值对为“选项字母-选项内容”，有四个键-值对。选项字母为A、B、C、D。 
+options：题目选项。字典，键-值对为“选项字母-选项内容”，有四个键-值对。选项字母为A、B、C、D。 
     
 answer：推理问题的答案。数组，元素是选项字母。例如，["A"]表示机器选择option的A选项作为答案。测试集没有此字段。
 
@@ -169,16 +169,15 @@ answer：推理问题的答案。数组，元素是选项字母。例如，["A"]
 ```json
 {
     id: spr-zh-train-0
-    instruction: 题目为不定项选择题。多选或漏选均不得分。答案选项必须与标准答案完全一致才
-能得分。请逐步思考，并最终输出答案选项。
+    instruction: 题目是多选题，有两个或两个以上的正确答案。答案选项必须与标准答案完全一致才能得分。请逐步思考，并最终输出答案选项。
     text: 赵志敬、谭处端、郝大通、孙不二、刘处玄、王处一六位道士在终南山重阳宫内盘腿席地打坐，围成一个圆圈，修炼内功，六人的位置恰好形成一个正六边形。六人都面朝外背对圆心而坐。任意相邻两人之间的间距相等，大约为一米。已知： 
-    (1)王处一在谭处端右侧紧邻位置。 
-    (2)郝大通在孙不二逆时针方向第三个位置。 
-    (3)刘处玄与王处一正背对。 
-    (4)赵志敬在孙不二右边数起第一个位置。 
-    (5)从郝大通的左边数起第五个位置是谭处端。 
-    question: 刘处玄与(  )之间隔着其他实体。 
-    option: {A:王处一, 
+    (1)王处一在谭处端右侧紧邻位置； 
+    (2)郝大通在孙不二逆时针方向第三个位置； 
+    (3)刘处玄与王处一正背对；
+    (4)赵志敬在孙不二右边数起第一个位置； 
+    (5)从郝大通的左边数起第五个位置是谭处端。
+    question: 刘处玄与()之间隔着其他实体。
+    options: {A:王处一, 
              B:郝大通, 
              C:孙不二, 
              D:赵志敬} 
@@ -197,13 +196,13 @@ answer：推理问题的答案。数组，元素是选项字母。例如，["A"]
 
 id：题目编号。每道题目都有唯一的编号，形如“spr-en-数据集-数字”。spr为任务英文spatial position reasoning的缩写，train, dev, test分别代表训练集, 验证集和测试集。
 
-instruction：说明考题目标的引导语。仅供参考，参赛队伍可自行设计提示词。
+instruction：说明考题目标的引导语。通过引导语可区分单选题（一个正确答案）和多选题（两个或两个以上正确答案）。仅供参考，参赛队伍可自行设计提示词。
 
 text：包含情景描述和已知条件的文本材料。
 
 question：机器需要回答的推理问题。形式上是一个句中有括号的陈述句。 
     
-option：题目选项。字典，键-值对为“选项字母-选项内容”，有四个键-值对。选项字母为A、B、C、D。 
+options：题目选项。字典，键-值对为“选项字母-选项内容”，有四个键-值对。选项字母为A、B、C、D。 
     
 answer：推理问题的答案。数组，元素是选项字母。例如，["A"]表示机器选择option的A选项作为答案。测试集没有此字段。
 
@@ -212,14 +211,14 @@ answer：推理问题的答案。数组，元素是选项字母。例如，["A"]
 ```json
 {
     id: spr-en-train-0
-    instruction：The question is multiple-choice with one or more correct answers. No partial credit will be given for incorrect or incomplete answers. Answer choices must exactly match the standard answer to be considered correct. Please think step by step and finally output the answer choices.
-    text：Six Taoist priests——Michael, Mary, Jennifer, William, John, Robert——are sitting cross-legged on the ground inside the Chongyang Palace on Zhongnan Mountain, forming a circle as they practice internal martial arts. The positions of the six individuals form a perfect hexagon. Each person is facing outward, with their backs to the center of the circle. The distance between any two adjacent individuals is equal, approximately one meter. It is known that: 
-    (1)Mary is directly to the right of Robert. 
-    (2)Jennifer is in the third position counterclockwise from William. 
-    (3)John and Robert are back-to-back. 
-    (4)Michael occupies the first position to the right of William. 
+    instruction：The question is multiple-choice with more than one correct answers. Answer choices must exactly match the gold answer to be considered correct. Please think step by step and finally output the answer choices.
+    text：Michael, Mary, Jennifer, William, John, Robert, ——these six Taoist priests are seated cross-legged on the ground inside the Chongyang Palace on Zhongnan Mountain, arranged in a circle as they practice internal martial arts. The positions of the six priests form a perfect hexagon. Each person is facing outward, with their backs to the center of the circle. The distance between any two adjacent priests is equal, approximately one meter. It is known that: 
+    (1)Mary is directly to the right of Robert;
+    (2)Jennifer is in the third position counterclockwise from William; 
+    (3)John and Robert are back-to-back;
+    (4)Michael occupies the first position to the right of William;
     (5)Mary occupies the fifth position to the left of Jennifer. 
-    question：There are other entities between John and (). 
+    question：There are other people between John and (). 
     option：{A:Robert, 
              B:Jennifer, 
              C:William, 
