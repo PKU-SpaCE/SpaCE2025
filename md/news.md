@@ -30,4 +30,4 @@
   - <a href="https://2030nlp.github.io/SpaCE2024/" target="_blank">第四届中文空间语义理解评测（SpaCE2024）</a >
 
 <hr/>
-<p class="text-center">最后更新于<strong>2025年3月30日</strong></p>
+<p class="text-center">最后更新于<strong>2025年4月1日</strong></p>
