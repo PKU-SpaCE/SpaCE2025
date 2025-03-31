@@ -7,11 +7,15 @@
 
 <br/>
 
+- `4月 1日` **关于如何提交结果**：将所有子任务的结果放入一个文件。文件规定为 jsonl 格式，每行一个 json 对象，必须有 id 字段和 answer 字段。以【<span style="color:var(--notice-red)">队伍名称-test-1<sub>指第几次提交</sub>-日期.jsonl</span>】给文件命名，将结果文件发送到 lmxiao@stu.pku.edu.cn 。我们每天会根据提交情况更新1次排行榜。
+
+- `4月1日` 语言能力评测任务的测试集发布 <a href="https://github.com/PKU-SpaCE/SpaCE2025/tree/main/data" target="_blank">🔗
+
 - `3月30日` 语义资源“空间语义词表”发布 <a href="https://github.com/PKU-SpaCE/SpaCE2025/tree/main/data" target="_blank">🔗
 
 - `3月30日` 评分程序发布 <a href="https://github.com/PKU-SpaCE/SpaCE2025/tree/main/eval" target="_blank">🔗
 
-- `3月30日` 推理任务的训练集、验证集、测试集发布 <a href="https://github.com/PKU-SpaCE/SpaCE2025/tree/main/data" target="_blank">🔗
+- `3月30日` 推理能力评测任务的训练集、验证集、测试集发布 <a href="https://github.com/PKU-SpaCE/SpaCE2025/tree/main/data" target="_blank">🔗
 
 - `3月26日` 示例集发布 <a href="https://github.com/PKU-SpaCE/SpaCE2025/tree/main/data" target="_blank">🔗
 
